@@ -15,8 +15,17 @@ int main()
     scanf("%d",&bt[count]); 
     rt[count]=bt[count]; 
   } 
-  printf("Enter Time Quantum:\t"); 
+  printf("Enter Time Quantum(Not more than 10 slots):\t"); 
   scanf("%d",&time_quantum); 
+  if(time_quantum>10)
+  {
+  	printf("Please enter Time Quantum less than 10 units");
+  	sleep(3);
+  	printf("Please re-enter !!!");
+  	
+  }
+  else
+  {
   printf("\n\nProcess\t|Turnaround Time|Waiting Time\n\n"); 
   for(time=0,count=0;remain!=0;) 
   { 
@@ -46,8 +55,9 @@ int main()
     else 
       count=0; 
   } 
-  printf("Average Waiting Time= %f\n",wait_time*1.0/n); 
+  printf("\nAverage Waiting Time= %f\n",wait_time*1.0/n); 
   printf("Avg Turnaround Time = %f",turnaround_time*1.0/n); 
+  }  
   
   return 0; 
 }
